@@ -29,6 +29,19 @@ public class App extends Application {
     @Override
     public void start(Stage primarystage) throws IOException {
 
-        
+        BorderPane root = new BorderPane();
+
+        root.setTop(new Label("Fent"));
+        root.setLeft(new Label("Bal"));
+        root.setRight(new Label("Jobb"));
+        root.setBottom(new Label("Lent"));
+        root.setCenter(new Label("Közép"));
+
+
+        Scene scene = new Scene(root, 500,300);
+        primarystage.setTitle("BorderPane ");
+        primarystage.setScene(scene);
+
+        primarystage.show();
     }
 }
