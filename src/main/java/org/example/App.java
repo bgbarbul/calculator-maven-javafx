@@ -7,10 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -63,8 +60,28 @@ public class App extends Application {
 
         combo.setEditable(true);
 
+        /* Spinner */
+        ObservableList<String> NewDays = FXCollections.observableArrayList(
+                "Monday", "Tuesday", "Wednesday", "Thursday",
+                "Friday", "Saturday", "Sunday");
+
+        Spinner<String> spinner = new Spinner<String>();
+
+        SpinnerValueFactory<String> valueFactory =
+                new SpinnerValueFactory.ListSpinnerValueFactory<String>(days);
+
+        valueFactory.setValue("Friday"); // default érték beállítása
+
+        spinner.setValueFactory(valueFactory);
+
+        //CheckBox
+
+        CheckBox box = new CheckBox("Szeretem a sajtot");
+        box.setSelected(true);
+
+
         VBox root = new VBox();
-        root.getChildren().addAll(lbl, btn, combo);
+        root.getChildren().addAll(lbl, btn, combo, spinner, box);
 
         scene1 = new Scene(root, 300, 300);
     }
