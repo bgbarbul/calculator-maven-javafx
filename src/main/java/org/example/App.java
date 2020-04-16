@@ -29,6 +29,7 @@ public class App extends Application {
     @Override
     public void start(Stage primarystage) throws IOException {
 
+        //BorderPane
         BorderPane root = new BorderPane();
 
         root.setTop(new Label("Fent"));
