@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -79,9 +80,21 @@ public class App extends Application {
         CheckBox box = new CheckBox("Szeretem a sajtot");
         box.setSelected(true);
 
+        ToggleGroup group = new ToggleGroup();
+
+        RadioButton button1 = new RadioButton("Male");
+        button1.setToggleGroup(group);
+        button1.setSelected(true); // default értéknek bejelöljük ezt
+
+        RadioButton button2 = new RadioButton("Female");
+        button2.setToggleGroup(group);
+
+        RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+        String toogleGroupValue = selectedRadioButton.getText();
+
 
         VBox root = new VBox();
-        root.getChildren().addAll(lbl, btn, combo, spinner, box);
+        root.getChildren().addAll(lbl, btn, combo, spinner, box, button1, button2);
 
         scene1 = new Scene(root, 300, 300);
     }
@@ -94,8 +107,9 @@ public class App extends Application {
             mainWindow.setScene(scene1);
         });
 
+        
         VBox root = new VBox();
-        root.getChildren().addAll(lbl, btn);
+        root.getChildren().addAll(lbl, btn) ;
 
         scene2 = new Scene(root, 300, 300);
     }
