@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -30,14 +31,15 @@ public class App extends Application {
     public void start(Stage primarystage) throws IOException {
 
         //BorderPane
-        BorderPane root = new BorderPane();
+        BorderPane root1 = new BorderPane();
 
-        root.setTop(new Label("Fent"));
-        root.setLeft(new Label("Bal"));
-        root.setRight(new Label("Jobb"));
-        root.setBottom(new Label("Lent"));
-        root.setCenter(new Label("Közép"));
+        root1.setTop(new Label("Fent"));
+        root1.setLeft(new Label("Bal"));
+        root1.setRight(new Label("Jobb"));
+        root1.setBottom(new Label("Lent"));
+        root1.setCenter(new Label("Közép"));
 
+        
 
         Scene scene = new Scene(root, 500,300);
         primarystage.setTitle("BorderPane ");
