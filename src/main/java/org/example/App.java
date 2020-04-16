@@ -3,6 +3,7 @@ package org.example;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -44,6 +45,7 @@ public class App extends Application {
         root2.setSpacing(10);
         root2.setPadding(new Insets(10,10,10,10));
         root2.getChildren().addAll(new Button("Egy"), new Button("Kettő"), new Button("Három"));
+
 
         Scene scene = new Scene(root2, 500,300);
         primarystage.setTitle("BorderPane ");
