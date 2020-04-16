@@ -17,6 +17,12 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
+        stage.setTitle("Hello JavaFX");
+        stage.show();
+    }
+
+    /*
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
@@ -30,7 +36,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
+*/
     public static void main(String[] args) {
         launch();
     }
