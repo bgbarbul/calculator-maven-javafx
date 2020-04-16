@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -18,49 +19,53 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene scene;
+    private Stage mainWindow;
+    private Scene scene1, scene2;
 
     public static void main(String[] args) {
         launch();
     }
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage primaryStage) throws IOException {
+        mainWindow = primaryStage;
 
-        stage.setTitle("Hello JavaFX");
+        mainWindow.setTitle("Hello JavaFX");
+
+        constructScene1();
+        constructScene2();
+
+        mainWindow.setScene(scene1);
+        mainWindow.setTitle("MultiScene");
+        mainWindow.show();
+    }
+
+    private void  constructScene1()
+    {
+        Label lbl = new Label("Scene 1");
+        Button btn = new  Button("Go Scene 2");
+        btn.setOnAction( e -> {
+            mainWindow.setScene(scene2);
+        });
 
         VBox root = new VBox();
-        Text msg = new Text("Kérlek add meg a neved!");
-        TextField mezo =new TextField();
+        root.getChildren().addAll(lbl, btn);
 
-        Button exit = new Button("Exit");
-        exit.setOnAction( e -> { Platform.exit(); } );
-
-        mezo.setOnKeyReleased( e -> { msg.setText("Üdv " + mezo.getText()); });
-
-        root.getChildren().addAll(msg, mezo, exit);
-
-        Scene scene = new Scene(root, 500,300);
-        stage.setScene(scene);
-
-        stage.show();
+        scene1 = new Scene(root, 300, 300);
     }
 
-    /*
-        scene = new Scene(loadFXML("primary"));
-        stage.setScene(scene);
-        stage.show();
-    }
+    private void constructScene2()
+    {
+        Label lbl = new Label("Scene 2");
+        Button btn = new  Button("Go Scene 1");
+        btn.setOnAction( e -> {
+            mainWindow.setScene(scene1);
+        });
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+        VBox root = new VBox();
+        root.getChildren().addAll(lbl, btn);
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+        scene2 = new Scene(root, 300, 300);
     }
-*/
-
 
 }
