@@ -40,8 +40,9 @@ public class App extends Application {
         root1.setCenter(new Label("Közép"));
 
         //HBox
-        HBox root2 = new HBox();
-        root2.getChildren().addAll(new Button("Egy"), new Button("Kettő"), new Button("Három"));
+        HBox root = new HBox();
+        root.setSpacing(10);
+        root.getChildren().addAll(new Button("Egy"), new Button("Kettő"), new Button("Három"));
 
         Scene scene = new Scene(root, 500,300);
         primarystage.setTitle("BorderPane ");
