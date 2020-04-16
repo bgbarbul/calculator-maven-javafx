@@ -2,10 +2,13 @@ package org.example;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -48,8 +51,20 @@ public class App extends Application {
             mainWindow.setScene(scene2);
         });
 
+        /* ComboBox */
+        ObservableList<String> days = FXCollections.observableArrayList(
+                "Monday", "Tuesday", "Wednesday", "Thursday",
+                "Friday", "Saturday", "Sunday");
+
+        ComboBox<String> combo = new ComboBox<String>();
+
+        combo.setItems(days); //értékek beállítása
+        combo.setValue("Friday"); //default érték
+
+        combo.setEditable(true);
+
         VBox root = new VBox();
-        root.getChildren().addAll(lbl, btn);
+        root.getChildren().addAll(lbl, btn, combo);
 
         scene1 = new Scene(root, 300, 300);
     }
