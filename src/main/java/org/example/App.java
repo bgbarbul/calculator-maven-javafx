@@ -42,6 +42,7 @@ public class App extends Application {
         //HBox
         HBox root = new HBox();
         root.setSpacing(10);
+        root.setPadding(new Insets(10,10,10,10));
         root.getChildren().addAll(new Button("Egy"), new Button("Kettő"), new Button("Három"));
 
         Scene scene = new Scene(root, 500,300);
