@@ -1,0 +1,7 @@
+module-info.class
+hu\alkfejl\nyilvantarto\controller\NyilvantartoController.class
+hu\alkfejl\nyilvantarto\model\bean\Szemely.class
+hu\alkfejl\nyilvantarto\controller\NyilvantartoControllerImpl.class
+hu\alkfejl\nyilvantarto\model\NyilvantartoDAO.class
+hu\alkfejl\nyilvantarto\model\NyilvantartoDAOMemImpl.class
+org\example\App.class

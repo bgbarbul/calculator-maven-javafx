@@ -10,4 +10,9 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BarbulGero_IM1S7U_Szamologép" options="--add-exports javafx.graphics/com.sun.glass.ui=org.example" />
+    </option>
+  </component>
 </project>
