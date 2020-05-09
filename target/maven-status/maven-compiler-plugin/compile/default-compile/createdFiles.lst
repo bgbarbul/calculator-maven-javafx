@@ -1,2 +1,5 @@
-org\example\App.class
 module-info.class
+hu\alkfejl\nyilvantarto\model\bean\Szemely.class
+hu\alkfejl\nyilvantarto\model\NyilvantartoDAO.class
+hu\alkfejl\nyilvantarto\model\NyilvantartoDAOMemImpl.class
+org\example\App.class
